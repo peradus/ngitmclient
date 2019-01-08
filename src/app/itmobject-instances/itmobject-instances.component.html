@@ -1,0 +1,7 @@
+<h4>Instances:</h4>
+<div *ngFor="let instance of itmobject.instances | keyvalue">
+  <app-itmobject-instance [itmobject]="instance.value">
+  </app-itmobject-instance>
+</div>
+
+

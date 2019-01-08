@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    {{ itmobject.name }} ( {{ itmobject.className }}) <br>
+
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ itmobject.shortDescription }}</h5>
+    <p class="card-text">{{ itmobject.description }}</p>
+
+    <app-itmobject-methods [itmobject]="itmobject"></app-itmobject-methods>
+
+    <app-itmobject-instances [itmobject]="itmobject"></app-itmobject-instances>
+
+  </div>
+</div>
