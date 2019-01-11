@@ -1,0 +1,5 @@
+<form>
+  <div *ngFor="let property of itmobject.properties | keyvalue">
+    <app-itmobject-property [itmobject]="itmobject" [property]="property.value"></app-itmobject-property>
+  </div>
+</form>

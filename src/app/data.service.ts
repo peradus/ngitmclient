@@ -22,6 +22,13 @@ export class DataService {
         'stop': { name: 'stop'},
         'start': { name: 'start'}
       },
+      properties: {
+        'testproperty' : {
+          'displayName' : 'testproperty',
+          'description' : 'this is a test property',
+          'value' : '123'
+        }
+      },
       instances: {
         'instance1': {
           name: 'instance1',
@@ -53,8 +60,8 @@ export class DataService {
     }
   }
 
-  getItmObject(): IITMObjectData {
-    console.log('DataService: getItmObject() called');
+  getItmObject(selectedInstance: string = ''): IITMObjectData {
+    console.log('DataService: getItmObject() called, instance =[' + selectedInstance + ']');
     return this.itmobject;
   }
 }

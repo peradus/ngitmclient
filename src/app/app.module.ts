@@ -18,6 +18,9 @@ import { ItmobjectMethodComponent } from './itmobject-method/itmobject-method.co
 import { TruncatePipe } from './truncate.pipe';
 import { InstancesPageComponent } from './instances-page/instances-page.component';
 import { LogService } from './log.service';
+import { PropertiesPageComponent } from './properties-page/properties-page.component';
+import { ItmobjectPropertyComponent } from './itmobject-property/itmobject-property.component';
+import { ItmobjectPropertiesComponent } from './itmobject-properties/itmobject-properties.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { LogService } from './log.service';
     ItmobjectMethodsComponent,
     ItmobjectMethodComponent,
     TruncatePipe,
-    InstancesPageComponent
+    InstancesPageComponent,
+    PropertiesPageComponent,
+    ItmobjectPropertyComponent,
+    ItmobjectPropertiesComponent
   ],
   imports: [
     NgbModule,

@@ -1,7 +1,8 @@
 export interface IITMObjectProperty {
+  displayName: string;
   description: string;
-   validator?: string;
-   value: string;
+  validator?: string;
+  value: string;
 }
 
 export interface IITMObjectProperties {

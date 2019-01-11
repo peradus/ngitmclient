@@ -9,9 +9,11 @@ import { DataService } from '../data.service';
 })
 export class HomeComponent implements OnInit {
   itmobject: IITMObjectData;
+  selectedInstance: string;
   constructor(private dataservice: DataService) { }
     ngOnInit() {
-      this.itmobject = this.dataservice.getItmObject();
+      this.selectedInstance = '';
+      this.itmobject = this.dataservice.getItmObject(this.selectedInstance);
   }
 
 
