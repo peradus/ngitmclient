@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfigurationService } from './configuration.service';
 import { ItmobjectComponent } from './itmobject/itmobject.component';
 import { ItmobjectInstanceComponent } from './itmobject-instance/itmobject-instance.component';
@@ -21,6 +21,7 @@ import { LogService } from './log.service';
 import { PropertiesPageComponent } from './properties-page/properties-page.component';
 import { ItmobjectPropertyComponent } from './itmobject-property/itmobject-property.component';
 import { ItmobjectPropertiesComponent } from './itmobject-properties/itmobject-properties.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -40,11 +41,13 @@ import { ItmobjectPropertiesComponent } from './itmobject-properties/itmobject-p
     ItmobjectPropertiesComponent
   ],
   imports: [
+    CommonModule,
     NgbModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ConfigurationService,

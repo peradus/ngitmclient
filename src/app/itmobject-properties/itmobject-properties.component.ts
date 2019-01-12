@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObjectData } from '../itmobject';
+import { IITMObjectData, IITMObjectProperties } from '../itmobject';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-itmobject-properties',
@@ -7,10 +8,12 @@ import { IITMObjectData } from '../itmobject';
   styleUrls: ['./itmobject-properties.component.scss']
 })
 export class ItmobjectPropertiesComponent implements OnInit {
-  @Input() itmobject: IITMObjectData;
+  @Input() properties: IITMObjectProperties;
+  form: FormGroup = new FormGroup({});
+
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }
