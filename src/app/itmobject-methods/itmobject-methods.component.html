@@ -1,5 +1,5 @@
 <div class="btn-group" role="group" aria-label="Basic example">
   <div *ngFor="let method of itmobject.methods | keyvalue">
-    <app-itmobject-method [itmobject]="itmobject" [method]="method.key"></app-itmobject-method>
+    <app-itmobject-method [instance]="instance" [methodName]="method.key"></app-itmobject-method>
   </div>
 </div>

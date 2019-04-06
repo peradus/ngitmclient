@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IITMObjectData } from './itmobject';
+import { IITMObjectData, IITMObjectInstance, IITMObjectProperty, IITMObjectProperties, IITMObjectMethods, IITMObjectMethod } from './itmobject';
 
 @Injectable({
   providedIn: 'root'
@@ -65,19 +65,53 @@ export class DataService {
           shortDescription: 'a short description',
           description: 'a long description'
         },
-        'instance3':{
+        'instance3': {
           name: 'instance3',
           className: 'ITMObjectClass',
           shortDescription: 'a short description',
           description: 'a long description'
         }
       }
-    }
+    };
   }
 
-  getItmObject(selectedInstance: string = ''): IITMObjectData {
-    console.log('DataService: getItmObject() called, instance =[' + selectedInstance + ']');
+  getItmObject(instance: string): IITMObjectData {
+    console.log('DataService: getItmObject() called, instance =[' + instance + ']');
     return this.itmobject;
   }
+
+  getItmObjectProperty(instance: string, property: string): IITMObjectProperty | undefined {
+    const itmobject: IITMObjectData = this.getItmObject(instance);
+    return (itmobject.properties[property]);
+  }
+
+  getItmObjectProperties(instance: string): IITMObjectProperties | undefined {
+    const itmobject: IITMObjectData = this.getItmObject(instance);
+    return itmobject.properties;
+  }
+
+  getItmObjectMethod(instance: string, method: string): IITMObjectMethod | undefined {
+    const itmobject: IITMObjectData = this.getItmObject(instance);
+    return (itmobject.methods[method]);
+  }
+
+  getItmObjectMethods(instance: string): IITMObjectMethods | undefined {
+    const itmobject: IITMObjectData = this.getItmObject(instance);
+    return itmobject.methods;
+  }
+
+  getItmObjectInstances(instance: string): string[] {
+    const itmobject: IITMObjectData = this.getItmObject(instance);
+    let instances: string[]= Object.keys(itmobject.instances);
+    instances.forEach(
+      (instanceKey,index)=>{
+          instances[index] = instance + '/' + instanceKey;
+      }
+    )
+    console.log('dataservice.instances');
+    console.dir(instances);
+    return instances;
+  }
+
 }
 

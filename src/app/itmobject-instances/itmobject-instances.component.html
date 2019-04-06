@@ -1,6 +1,6 @@
 <h4>Instances:</h4>
-<div *ngFor="let instance of itmobject.instances | keyvalue">
-  <app-itmobject-instance [itmobject]="instance.value">
+<div *ngFor="let instance of instances">
+  <app-itmobject-instance [instance]="instance">
   </app-itmobject-instance>
 </div>
 

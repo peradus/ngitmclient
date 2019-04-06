@@ -1,6 +1,6 @@
 <form [formGroup]="form">
   <div *ngFor="let property of properties | keyvalue">
-    <app-itmobject-property [propertyName]="property.key" [property]="property.value" [form]="form"></app-itmobject-property>
+    <app-itmobject-property [instance]="instance" [propertyName]="property.key" [form]="form"></app-itmobject-property>
   </div>
 
   <div>

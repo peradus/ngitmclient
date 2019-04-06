@@ -7,12 +7,10 @@ import { DataService } from '../data.service';
   templateUrl: './properties-page.component.html',
   styleUrls: ['./properties-page.component.scss']
 })
+
 export class PropertiesPageComponent implements OnInit {
-  itmobject: IITMObjectData;
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    this.itmobject = this.dataservice.getItmObject();
   }
-
 }

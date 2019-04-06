@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IITMObjectData } from '../itmobject';
 import { DataService } from '../data.service';
 
@@ -8,11 +8,9 @@ import { DataService } from '../data.service';
   styleUrls: ['./instances-page.component.scss']
 })
 export class InstancesPageComponent implements OnInit {
-  itmobject: IITMObjectData;
-  constructor(private dataservice: DataService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.itmobject = this.dataservice.getItmObject();
   }
 
 }

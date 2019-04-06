@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Itmobject, IITMObjectProperty } from '../itmobject';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-itmobject-property',
@@ -10,19 +11,24 @@ import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_di
 })
 export class ItmobjectPropertyComponent implements OnInit {
   @Input() form: FormGroup;
-  @Input() property: IITMObjectProperty;
-  @Input() propertyName: string;
-  control: FormControl = new FormControl(
+  @Input() instance:string= '';
+  @Input() propertyName:string = '';
+  property: IITMObjectProperty;
+   control: FormControl = new FormControl(
     '',
     Validators.required
     );
 
-  constructor() { }
+  constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    this.form.addControl(this.propertyName, this.control
+    // load property
+    this.property = this.dataservice.getItmObjectProperty(this.instance, this.propertyName);
+
+    // add form control
+    this.form.addControl(
+      this.propertyName, this.control
     );
-    console.dir(this.property);
   }
 
   get value() { return this.property.value; }

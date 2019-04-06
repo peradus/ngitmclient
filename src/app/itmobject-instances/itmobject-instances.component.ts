@@ -9,9 +9,12 @@ import { DataService } from '../data.service';
   styleUrls: ['./itmobject-instances.component.scss']
 })
 export class ItmobjectInstancesComponent implements OnInit {
-  @Input() itmobject: IITMObjectData;
+  @Input() instance: string;
+  instances: string[];
+
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
+      this.instances = this.dataservice.getItmObjectInstances(this.instance);
   }
 }

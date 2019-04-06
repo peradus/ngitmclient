@@ -36,6 +36,10 @@ export interface IITMObjectData {
   instances?: IITMObjectInstances;
 }
 
+export interface IITMObjectInstance {
+  name: string;
+}
+
 export class Itmobject {
   constructor (public data: IITMObjectData) {
   }
