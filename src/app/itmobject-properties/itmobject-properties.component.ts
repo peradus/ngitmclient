@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObjectData, IITMObjectProperties } from '../itmobject';
+import { IITMObject, IITMObjectProperties } from '../itmobject';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DataService } from '../data.service';
 
@@ -16,7 +16,6 @@ export class ItmobjectPropertiesComponent implements OnInit {
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    let itmobject: IITMObjectData= this.dataservice.getItmObject(this.instance);
-    this.properties=itmobject.properties;
+    this.properties = this.dataservice.getItmObjectProperties(this.instance);
   }
 }

@@ -13,13 +13,14 @@ export interface IITMObjectProperties {
 export interface IITMObjectMethod {
   name: string;
   parameters?: IITMObjectProperties;
+  methods?: IITMObjectMethods;
 }
 
 export interface IITMObjectMethods {
   [name: string]: IITMObjectMethod;
 }
 
-export interface IITMObjectData {
+export interface IITMObject {
   name: string;
   className: string;
   shortDescription?: string;
@@ -29,10 +30,10 @@ export interface IITMObjectData {
  }
 
 export interface IITMObjectInstances {
-  [name: string]: IITMObjectData;
+  [name: string]: IITMObject | {};
 }
 
-export interface IITMObjectData {
+export interface IITMObject {
   instances?: IITMObjectInstances;
 }
 
@@ -40,7 +41,6 @@ export interface IITMObjectInstance {
   name: string;
 }
 
-export class Itmobject {
-  constructor (public data: IITMObjectData) {
-  }
+export interface IITMObjectDataTable {
+  [instance: string]: IITMObject;
 }

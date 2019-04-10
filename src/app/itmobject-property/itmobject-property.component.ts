@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Itmobject, IITMObjectProperty } from '../itmobject';
+import { IITMObjectProperty } from '../itmobject';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 import { DataService } from '../data.service';

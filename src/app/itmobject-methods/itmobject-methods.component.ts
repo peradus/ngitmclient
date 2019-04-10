@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObjectData, IITMObjectMethods } from '../itmobject';
+import { IITMObject, IITMObjectMethods } from '../itmobject';
 import { DataService } from '../data.service';
 
 @Component({

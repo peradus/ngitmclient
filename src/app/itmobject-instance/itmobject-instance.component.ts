@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Itmobject, IITMObjectData } from '../itmobject';
+import { IITMObject } from '../itmobject';
 import { TruncatePipe } from '../truncate.pipe';
 import { DataService } from '../data.service';
 
@@ -9,8 +9,8 @@ import { DataService } from '../data.service';
   styleUrls: ['./itmobject-instance.component.scss']
 })
 export class ItmobjectInstanceComponent implements OnInit {
-  @Input() instance:string;
-  itmobject: IITMObjectData;
+  @Input() instance: string;
+  itmobject: IITMObject;
   shownDescription: string;
   constructor(private dataservice: DataService, private truncatePipe: TruncatePipe) { }
 
