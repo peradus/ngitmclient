@@ -15,7 +15,7 @@ export class ItmobjectMethodsComponent implements OnInit {
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    this.methods = this.dataservice.getItmObjectMethods(this.instance);
+    this.methods = this.dataservice.getItmObjectMethods(this.instance, this.method);
   }
 
 }

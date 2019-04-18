@@ -76,10 +76,16 @@ export class DataService {
         'sub': {
           name: 'sub',
           methods: {
-            'one':   { 'name': 'No.1' },
-            'two':   { 'name': 'No.2' },
-            'three': { 'name': 'No.3' },
-            'four':  { 'name': 'No.4' }
+            'one':   {
+              name: 'No.1',
+              methods: {
+                'A':{ 'name': 'A' },
+                'B':{ 'name': 'B' }
+              }
+            },
+            'two':   { 'name': 'No.2' , methods:{} },
+            'three': { 'name': 'No.3' , methods:{} },
+            'four':  { 'name': 'No.4' , methods:{} }
           }
         }
       }
@@ -96,7 +102,7 @@ export class DataService {
 
     // ----------------------------------------------------------------------
     // instance 'instance3'
-    this.itmobjectData['instance5'] = {
+    this.itmobjectData['instance3'] = {
       name: 'instance3',
       className: 'ITMObjectClass',
       shortDescription: 'a short description',
@@ -121,18 +127,39 @@ export class DataService {
   }
 
   getItmObjectMethod(instance: string, method: string): IITMObjectMethod | undefined {
-    const itmobject: IITMObject = this.getItmObject(instance);
-    return (itmobject.methods[method]);
+    let methodArr: string[] = method.split('/');
+    let methodName: string ;
+
+    methodName = methodArr[methodArr.length - 1];
+    methodArr = methodArr.slice(0,methodArr.length - 1);
+
+    const itmObjectMethods: IITMObjectMethods = this.getItmObjectMethods(instance, methodArr.join('/'));
+
+    return (itmObjectMethods[methodName]);
   }
 
-  getItmObjectMethods(instance: string): IITMObjectMethods | undefined {
+  getItmObjectMethods(instance: string, method: string = ''): IITMObjectMethods | undefined {
     const itmobject: IITMObject = this.getItmObject(instance);
-    return itmobject.methods;
+    let itmObjectMethods: IITMObjectMethods = itmobject.methods;
+
+    if (method === '') {
+      return itmObjectMethods;
+    }
+    // if sub methods specified, parse towards submethod
+    // stop/server
+    let methodArr = method.split('/');
+    while (methodArr.length > 0) {
+      itmObjectMethods = itmObjectMethods[ methodArr[0] ].methods;
+      methodArr.shift();
+    }
+
+    // if assigned itmObjectMethod return its methods
+    return itmObjectMethods;
   }
 
   getItmObjectInstances(instance: string): string[] {
     const itmobject: IITMObject = this.getItmObject(instance);
-    const instances: string[]= Object.keys(itmobject.instances);
+    const instances: string[] = Object.keys(itmobject.instances);
     instances.forEach(
       (instanceKey, index) => {
           if (instance === '') {
@@ -142,7 +169,7 @@ export class DataService {
             instances[index] = instance + '/' + instanceKey;
           }
       }
-    )
+    );
     console.log('dataservice.instances');
     console.dir(instances);
     return instances;

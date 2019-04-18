@@ -21,6 +21,7 @@
     "@angular/router": "~7.2.2",
     "@ng-bootstrap/ng-bootstrap": "^4.0.2",
     "core-js": "^2.6.3",
+    "glyphicons": "^0.2.0",
     "npm": "^6.7.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
