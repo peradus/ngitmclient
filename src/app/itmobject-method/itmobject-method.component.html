@@ -2,10 +2,8 @@
   <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
     {{ method.name }}
     <i *ngIf="method.methods" class="fas fa-caret-right"></i>
-
-    <app-itmobject-methods *ngIf="method.methods" [instance]="instance" [method]="method"></app-itmobject-methods>  
-
- 
+  
+    <app-itmobject-methods [instance]="instance" [method]="methodName"></app-itmobject-methods>  
   </button>
 </div>
 
@@ -25,6 +23,4 @@ https://ng-bootstrap.github.io/#/components/dropdown/examples
     </div>
   </div>
 </div>
-
-       
 -->

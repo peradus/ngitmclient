@@ -12,10 +12,19 @@ export class ItmobjectMethodsComponent implements OnInit {
   @Input() method = '';
   methods: IITMObjectMethods;
 
+  get baseMethod(): string  {
+    if (this.method !== '') {
+      return this.method + '/';
+    } else {
+      return '';
+    }
+  }
+
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
     this.methods = this.dataservice.getItmObjectMethods(this.instance, this.method);
+
   }
 
 }

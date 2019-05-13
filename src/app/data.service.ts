@@ -77,15 +77,15 @@ export class DataService {
           name: 'sub',
           methods: {
             'one':   {
-              name: 'No.1',
+              name: 'One',
               methods: {
-                'A':{ 'name': 'A' },
-                'B':{ 'name': 'B' }
+                'A': { 'name': 'A' },
+                'B': { 'name': 'B' }
               }
             },
-            'two':   { 'name': 'No.2' , methods:{} },
-            'three': { 'name': 'No.3' , methods:{} },
-            'four':  { 'name': 'No.4' , methods:{} }
+            'two':   { 'name': 'Two'  },
+            'three': { 'name': 'Three' },
+            'four':  { 'name': 'Four' }
           }
         }
       }
@@ -110,6 +110,24 @@ export class DataService {
     };
   }
 
+  topInstance(instance: string): string {
+    let i = instance.indexOf('/');
+    if (i === -1) { // no separator, return full string
+      return instance;
+    } else { // return text till separator
+      return instance.substr(0, i);
+    }
+  }
+
+  takeTopInstance(instance: string): string {
+    let i = instance.indexOf('/');
+    if (i === -1) { // no separator, return full string
+      return '' ;
+    } else { // remove text till separator
+      return instance.substr(i+1);
+    }
+  }
+
   getItmObject(instance: string): IITMObject | undefined {
     console.log('DataService: getItmObject() called, instance =[' + instance + ']');
 
@@ -126,35 +144,45 @@ export class DataService {
     return itmobject.properties;
   }
 
-  getItmObjectMethod(instance: string, method: string): IITMObjectMethod | undefined {
-    let methodArr: string[] = method.split('/');
-    let methodName: string ;
-
-    methodName = methodArr[methodArr.length - 1];
-    methodArr = methodArr.slice(0,methodArr.length - 1);
-
-    const itmObjectMethods: IITMObjectMethods = this.getItmObjectMethods(instance, methodArr.join('/'));
-
-    return (itmObjectMethods[methodName]);
-  }
 
   getItmObjectMethods(instance: string, method: string = ''): IITMObjectMethods | undefined {
     const itmobject: IITMObject = this.getItmObject(instance);
     let itmObjectMethods: IITMObjectMethods = itmobject.methods;
 
-    if (method === '') {
-      return itmObjectMethods;
-    }
-    // if sub methods specified, parse towards submethod
-    // stop/server
-    let methodArr = method.split('/');
-    while (methodArr.length > 0) {
-      itmObjectMethods = itmObjectMethods[ methodArr[0] ].methods;
-      methodArr.shift();
+    while (true) {
+      if( method === '') {
+        return itmObjectMethods;
+      } else {
+        const subMethod: string = this.topInstance(method);
+        if (!itmObjectMethods[subMethod]) {
+          return undefined;
+        } else {
+          method = this.takeTopInstance(method);
+          itmObjectMethods = itmObjectMethods[subMethod].methods;
+        }
+      }
     }
 
     // if assigned itmObjectMethod return its methods
     return itmObjectMethods;
+  }
+
+  getItmObjectMethod(instance: string, method: string): IITMObjectMethod | undefined {
+    const itmObjectMethods: IITMObjectMethods = this.getItmObjectMethods(instance);
+    let itmObjectMethod: IITMObjectMethod = itmObjectMethods[ this.topInstance(method) ] ;
+    method = this.takeTopInstance( method );
+
+    while (true) {
+      if ( method === '') {
+        return itmObjectMethod;
+      } else {
+        const subMethod = this.topInstance( method );
+        itmObjectMethod = itmObjectMethod.methods[ subMethod ];
+        method = this.takeTopInstance( method );
+      }
+    }
+// if assigned itmObjectMethod return its methods
+    return itmObjectMethod;
   }
 
   getItmObjectInstances(instance: string): string[] {
