@@ -1,10 +1,24 @@
 <div class="btn-group">
-  <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
-    {{ method.name }}
-    <i *ngIf="method.methods" class="fas fa-caret-right"></i>
+  <div *ngIf="method.methods">
   
-    <app-itmobject-methods [instance]="instance" [method]="methodName"></app-itmobject-methods>  
-  </button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+        {{ methodName }}
+        </button>
+      
+        <div class="dropdown-menu">
+            <app-itmobject-methods [instance]="instance" [method]="methodName"></app-itmobject-methods>  
+          </div>
+      </div>
+  </div>
+
+  <div *ngIf="!method.methods">
+      <button type="button" class="btn btn-primary btn-sm">
+        {{ method.name }}
+      </button>
+  </div>
+      
+  
 </div>
 
 <!-- drop down info here

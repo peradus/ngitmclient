@@ -77,15 +77,22 @@ export class DataService {
           name: 'sub',
           methods: {
             'one':   {
-              name: 'One',
+              name: 'one',
               methods: {
-                'A': { 'name': 'A' },
-                'B': { 'name': 'B' }
+                'A': {
+                  name: 'A',
+                  methods: {
+                    '1': { name: '1'},
+                    '2': { name: '2'},
+                    '3': { name: '3'},
+                  }
+                },
+                'B': { name: 'B' }
               }
             },
-            'two':   { 'name': 'Two'  },
-            'three': { 'name': 'Three' },
-            'four':  { 'name': 'Four' }
+            'two':   { name: 'Two'  },
+            'three': { name: 'Three' },
+            'four':  { name: 'Four' }
           }
         }
       }
@@ -150,7 +157,7 @@ export class DataService {
     let itmObjectMethods: IITMObjectMethods = itmobject.methods;
 
     while (true) {
-      if( method === '') {
+      if (method === '') {
         return itmObjectMethods;
       } else {
         const subMethod: string = this.topInstance(method);
