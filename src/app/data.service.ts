@@ -32,22 +32,22 @@ export class DataService {
         },
         properties: {
           'testproperty' : {
-            'displayName' : 'testproperty',
+            'name' : 'testproperty',
             'description' : 'this is a test property',
             'value' : '123'
           },
           'testproperty2' : {
-            'displayName' : 'testproperty2',
+            'name' : 'testproperty2',
             'description' : 'this is a test property2',
             'value' : '123'
           },
           'testproperty3' : {
-            'displayName' : 'testproperty3',
+            'name' : 'testproperty3',
             'description' : 'this is a test property3',
             'value' : '123'
           },
           'testproperty4' : {
-            'displayName' : 'testproperty4',
+            'name' : 'testproperty4',
             'description' : 'this is a test property4',
             'value' : '123'
           }

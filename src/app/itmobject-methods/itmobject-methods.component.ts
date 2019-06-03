@@ -9,12 +9,12 @@ import { DataService } from '../data.service';
 })
 export class ItmobjectMethodsComponent implements OnInit {
   @Input() instance: string;
-  @Input() method = '';
+  @Input() methodName = '';
   methods: IITMObjectMethods;
 
   get baseMethod(): string  {
-    if (this.method !== '') {
-      return this.method + '/';
+    if (this.methodName !== '') {
+      return this.methodName + '/';
     } else {
       return '';
     }
@@ -23,7 +23,7 @@ export class ItmobjectMethodsComponent implements OnInit {
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    this.methods = this.dataservice.getItmObjectMethods(this.instance, this.method);
+    this.methods = this.dataservice.getItmObjectMethods(this.instance, this.methodName);
 
   }
 

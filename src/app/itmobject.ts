@@ -1,5 +1,6 @@
 export interface IITMObjectProperty {
-  displayName: string;
+  name: string;
+  displayName?: string;
   hint?: string;
   description?: string;
   validator?: string;
@@ -12,6 +13,7 @@ export interface IITMObjectProperties {
 
 export interface IITMObjectMethod {
   name: string;
+  displayName?: string;
   parameters?: IITMObjectProperties;
   methods?: IITMObjectMethods;
 }

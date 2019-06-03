@@ -1,4 +1,4 @@
-<div class="btn-group" role="group" aria-label="Basic example">
+<div class="btn-group" role="group">
   <div *ngFor="let m of methods | keyvalue">
     <app-itmobject-method [instance]="instance" [methodName]="baseMethod + m.key"></app-itmobject-method>
   </div>
