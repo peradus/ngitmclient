@@ -22,6 +22,7 @@ import { PropertiesPageComponent } from './properties-page/properties-page.compo
 import { ItmobjectPropertyComponent } from './itmobject-property/itmobject-property.component';
 import { ItmobjectPropertiesComponent } from './itmobject-properties/itmobject-properties.component';
 import { CommonModule } from '@angular/common';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFontAwesomeModule
   ],
   providers: [
     ConfigurationService,

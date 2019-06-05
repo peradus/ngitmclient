@@ -78,17 +78,28 @@ export class DataService {
           methods: {
             'one':   {
               name: 'one',
-              methods: {
-                'A': {
-                  name: 'A',
-                  methods: {
-                    '1': { name: '1'},
-                    '2': { name: '2'},
-                    '3': { name: '3'},
-                  }
+              properties: {
+                'testproperty' : {
+                  'name' : 'testproperty',
+                  'description' : 'this is a test property',
+                  'value' : '123'
                 },
-                'B': { name: 'B' }
-              }
+                'testproperty2' : {
+                  'name' : 'testproperty2',
+                  'description' : 'this is a test property2',
+                  'value' : '123'
+                },
+                'testproperty3' : {
+                  'name' : 'testproperty3',
+                  'description' : 'this is a test property3',
+                  'value' : '123'
+                },
+                'testproperty4' : {
+                  'name' : 'testproperty4',
+                  'description' : 'this is a test property4',
+                  'value' : '123'
+                }
+              },
             },
             'two':   { name: 'Two'  },
             'three': { name: 'Three' },

@@ -14,7 +14,7 @@ export interface IITMObjectProperties {
 export interface IITMObjectMethod {
   name: string;
   displayName?: string;
-  parameters?: IITMObjectProperties;
+  properties?: IITMObjectProperties;
   methods?: IITMObjectMethods;
 }
 
