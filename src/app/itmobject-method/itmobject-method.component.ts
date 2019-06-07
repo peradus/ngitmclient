@@ -9,16 +9,10 @@ import { DataService } from '../data.service';
 })
 export class ItmobjectMethodComponent implements OnInit {
   @Input() instance: string;
-  @Input() methodName: string;
-  method: IITMObjectMethod;
+  @Input() method: IITMObjectMethod;
 
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    this.method = this.dataservice.getItmObjectMethod(this.instance, this.methodName);
-
-    console.log('Method [' + this.methodName + ']');
-    console.dir(this.method);
   }
-
 }

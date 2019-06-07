@@ -7,41 +7,22 @@ export interface IITMObjectProperty {
   value: string;
 }
 
-export interface IITMObjectProperties {
-    [name: string]: IITMObjectProperty;
-}
-
 export interface IITMObjectMethod {
   name: string;
   displayName?: string;
-  properties?: IITMObjectProperties;
-  methods?: IITMObjectMethods;
-}
-
-export interface IITMObjectMethods {
-  [name: string]: IITMObjectMethod;
+  properties?: IITMObjectProperty[];
+  methods?: IITMObjectMethod[];
 }
 
 export interface IITMObject {
   name: string;
-  className: string;
+  className?: string;
   shortDescription?: string;
   description?: string;
-  methods?: IITMObjectMethods;
-  properties?: IITMObjectProperties;
+  methods?: IITMObjectMethod[];
+  properties?: IITMObjectProperty[];
+  instances?: IITMObject[];
  }
-
-export interface IITMObjectInstances {
-  [name: string]: IITMObject | {};
-}
-
-export interface IITMObject {
-  instances?: IITMObjectInstances;
-}
-
-export interface IITMObjectInstance {
-  name: string;
-}
 
 export interface IITMObjectDataTable {
   [instance: string]: IITMObject;

@@ -1,6 +1,7 @@
 <div class="btn-group" role="group">
-  <div *ngFor="let m of methods | keyvalue">
-    <app-itmobject-method [instance]="instance" [methodName]="baseMethod + m.key"></app-itmobject-method>
-  </div>
+  <app-itmobject-method *ngFor="let method of methods" 
+    [instance]="instance"
+    [method]="method">
+  </app-itmobject-method>
 </div>
 

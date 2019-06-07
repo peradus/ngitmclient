@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
 })
 export class ItmobjectInstancesComponent implements OnInit {
   @Input() instance: string;
-  instances: string[];
+  instances: IITMObject[];
 
   constructor(private dataservice: DataService) { }
 

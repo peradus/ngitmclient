@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObject, IITMObjectProperties } from '../itmobject';
+import { IITMObject, IITMObjectProperty } from '../itmobject';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DataService } from '../data.service';
 
@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
 })
 export class ItmobjectPropertiesComponent implements OnInit {
   @Input() instance: string;
-  properties: IITMObjectProperties;
+  properties: IITMObjectProperty[];
   form: FormGroup = new FormGroup({});
 
   constructor(private dataservice: DataService) { }

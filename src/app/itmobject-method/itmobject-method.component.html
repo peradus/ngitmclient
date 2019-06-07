@@ -1,27 +1,17 @@
 <div class="btn-group">
-  <div *ngIf="method.methods">
-  
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-        {{ methodName }}
-        </button>
-      
-        <div class="dropdown-menu">
-            <app-itmobject-methods [instance]="instance" [methodName]="methodName"></app-itmobject-methods>  
-          </div>
-      </div>
+  <button type="button" 
+            class="btn btn-primary btn-sm" 
+            data-toggle="dropdown"
+            [class.dropdown-toggle]="method.methods"
+            >
+      {{ method.name }}
+      <fa name="window-maximize"></fa>
+  </button>
+
+  <div class="dropdown-menu">
+    <app-itmobject-method *ngFor="let m of method.methods" [instance]="instance" [method]="m"></app-itmobject-method>  
   </div>
 
-  <div *ngIf="!method.methods">
-      <button type="button" class="btn btn-primary btn-sm">
-        {{ method.name }}
-        <span class="icon">
-          <fa name="window-maximize"></fa>
-        </span>
-        
-      </button>
-  </div>
-  
 </div>
 
 <!-- drop down info here

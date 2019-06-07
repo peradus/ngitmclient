@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObject, IITMObjectMethods } from '../itmobject';
 import { DataService } from '../data.service';
+import { IITMObjectMethod } from '../itmobject';
 
 @Component({
   selector: 'app-itmobject-methods',
@@ -9,21 +9,12 @@ import { DataService } from '../data.service';
 })
 export class ItmobjectMethodsComponent implements OnInit {
   @Input() instance: string;
-  @Input() methodName = '';
-  methods: IITMObjectMethods;
-
-  get baseMethod(): string  {
-    if (this.methodName !== '') {
-      return this.methodName + '/';
-    } else {
-      return '';
-    }
-  }
+  methods: IITMObjectMethod[];
 
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    this.methods = this.dataservice.getItmObjectMethods(this.instance, this.methodName);
+    this.methods = this.dataservice.getItmObjectMethods(this.instance);
 
   }
 
