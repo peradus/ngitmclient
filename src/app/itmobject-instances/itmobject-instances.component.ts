@@ -12,6 +12,10 @@ export class ItmobjectInstancesComponent implements OnInit {
   @Input() instance: string;
   instances: IITMObject[];
 
+  get baseInstance(): string {
+    if (this.instance !== '') { return this.instance + '/'; }
+    return '';
+  }
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {

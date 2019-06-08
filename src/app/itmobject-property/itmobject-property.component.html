@@ -1,13 +1,13 @@
 <div [formGroup]="form" class="form-group">
     <label for="{{ property.displayName }}">{{ property.displayName }}</label>
     <input
-        [formControlName]="propertyName"
+        [formControlName]="name"
         type="text"
         class="form-control"
         id="{{ property.displayName }}"
         [value]="value"
     >
-    <div *ngIf="form.get(propertyName).touched && form.get(propertyName).invalid" class="class alert alert-danger">
+    <div *ngIf="form.get(name).touched && form.get(name).invalid" class="class alert alert-danger">
       {{ property.displayName }} is required
     </div>
     <small class="form-text text-muted">

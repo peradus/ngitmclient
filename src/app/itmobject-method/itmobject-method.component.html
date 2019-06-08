@@ -5,7 +5,7 @@
             [class.dropdown-toggle]="method.methods"
             >
       {{ method.name }}
-      <fa name="window-maximize"></fa>
+      <fa *ngIf="method.properties" name="window-maximize"></fa>
   </button>
 
   <div class="dropdown-menu">

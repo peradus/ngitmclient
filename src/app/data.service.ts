@@ -162,8 +162,8 @@ export class DataService {
 
   getItmObject(instance: string): IITMObject | undefined {
     console.log('DataService: getItmObject() called, instance =[' + instance + ']');
-
-    return this.itmobjectData[instance];
+    if (this.itmobjectData[instance]) { return this.itmobjectData[instance]}
+    return { name: 'undefined'};
   }
 
   getItmObjectProperty(instance: string, property: string): IITMObjectProperty | undefined {
@@ -176,9 +176,10 @@ export class DataService {
     return itmobject.properties;
   }
 
-  getItmObjectMethods(instance: string): IITMObjectMethod[] | undefined {
+  getItmObjectMethods(instance: string): IITMObjectMethod[] {
     const itmobject: IITMObject = this.getItmObject(instance);
-    return itmobject.methods;
+    if (itmobject.methods) { return itmobject.methods; }
+    return [];
   }
 
   getItmObjectInstances(instance: string): IITMObject[] | undefined {

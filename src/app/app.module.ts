@@ -23,6 +23,7 @@ import { ItmobjectPropertyComponent } from './itmobject-property/itmobject-prope
 import { ItmobjectPropertiesComponent } from './itmobject-properties/itmobject-properties.component';
 import { CommonModule } from '@angular/common';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ItmobjectImageComponent } from './itmobject-image/itmobject-image.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     InstancesPageComponent,
     PropertiesPageComponent,
     ItmobjectPropertyComponent,
-    ItmobjectPropertiesComponent
+    ItmobjectPropertiesComponent,
+    ItmobjectImageComponent
   ],
   imports: [
     CommonModule,

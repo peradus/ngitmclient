@@ -1,8 +1,6 @@
 <form [formGroup]="form">
-  <div *ngFor="let property of properties | keyvalue">
-    <app-itmobject-property [instance]="instance" [propertyName]="property.key" [form]="form"></app-itmobject-property>
-  </div>
-
+  <app-itmobject-property *ngFor="let p of properties" [instance]="instance" [property]="p" [form]="form"></app-itmobject-property>
+  
   <div>
     <button type="submit" [disabled]="form.invalid">
       Save

@@ -1,14 +1,20 @@
 <div class="card border-primary">
-  <img class="card-img-left" src="../../assets/images/itmobject.png" alt="ITMObjectInstanceImage" width="64px" height="64px">
-    <div class="card-body">
-      <h5 class="card-title">{{ itmobject.name }} ( {{ itmobject.className }})  </h5>
-      <h6 class="card-subtitle"> {{ itmobject.shortDescription }}</h6>
+  
+  <div class="card-header">
+    <app-itmobject-image [instance]="instance" width="32px" height="32px"></app-itmobject-image>
 
-      <p class="card-text" (click)='expandShownDescription()'>
-          {{ shownDescription }}
-      </p>
+    {{ itmobject.name }} ( {{ itmobject.className }}) 
+  </div>
+    
+  <div class="card-body">
+    <h5 class="card-title"> </h5>
+    <h6 class="card-subtitle"> {{ itmobject.shortDescription }}</h6>
 
-      <app-itmobject-methods [instance]="instance"></app-itmobject-methods>
+    <p class="card-text" (click)='expandShownDescription()'>
+        {{ shownDescription }}
+    </p>
 
-    </div>
+    <app-itmobject-methods [instance]="instance"></app-itmobject-methods>
+
+  </div>
 </div>

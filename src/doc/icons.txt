@@ -1,0 +1,9 @@
+https://github.com/FortAwesome/angular-fontawesome
+
+https://www.npmjs.com/package/angular-font-awesome
+
+http://www.independent-software.com/7-fontawesome-tricks-you-probably-didnt-know-about.html
+
+alternative: 
+line-awesome
+https://icons8.com/articles/line-awesome/

@@ -11,23 +11,23 @@ import { DataService } from '../data.service';
 })
 export class ItmobjectPropertyComponent implements OnInit {
   @Input() form: FormGroup;
-  @Input() instance:string= '';
-  @Input() propertyName:string = '';
-  property: IITMObjectProperty;
+  @Input() instance: string ;
+  @Input() property: IITMObjectProperty;
    control: FormControl = new FormControl(
     '',
     Validators.required
     );
 
+    get name(): string {
+      return this.property.name;
+    }
+
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    // load property
-    this.property = this.dataservice.getItmObjectProperty(this.instance, this.propertyName);
-
     // add form control
     this.form.addControl(
-      this.propertyName, this.control
+      this.name, this.control
     );
   }
 
