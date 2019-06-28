@@ -24,6 +24,8 @@ import { ItmobjectPropertiesComponent } from './itmobject-properties/itmobject-p
 import { CommonModule } from '@angular/common';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ItmobjectImageComponent } from './itmobject-image/itmobject-image.component';
+import { PropertiesDialogComponent } from './properties-dialog/properties-dialog.component';
+import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { ItmobjectImageComponent } from './itmobject-image/itmobject-image.compo
     PropertiesPageComponent,
     ItmobjectPropertyComponent,
     ItmobjectPropertiesComponent,
-    ItmobjectImageComponent
+    ItmobjectImageComponent,
+    PropertiesDialogComponent,
+    ModalDialogComponent
   ],
   imports: [
     CommonModule,

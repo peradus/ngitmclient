@@ -1,17 +1,74 @@
 <div class="btn-group">
-  <button type="button" 
-            class="btn btn-primary btn-sm" 
-            data-toggle="dropdown"
-            [class.dropdown-toggle]="method.methods"
-            >
+  <div *ngIf="method.methods; then showSubMethods else noSubMethods"></div>
+    
+  <ng-template #showSubMethods>
+    <button type="button" 
+      class="btn btn-primary btn-sm dropdown-toggle" 
+      data-toggle="dropdown"
+    >
       {{ method.name }}
-      <fa *ngIf="method.properties" name="window-maximize"></fa>
-  </button>
 
-  <div class="dropdown-menu">
-    <app-itmobject-method *ngFor="let m of method.methods" [instance]="instance" [method]="m"></app-itmobject-method>  
-  </div>
+    </button>
 
+    <div class="dropdown-menu">
+      <app-itmobject-method *ngFor="let m of method.methods" [instance]="instance" [method]="m"></app-itmobject-method>  
+    </div>
+  </ng-template>
+  
+  <ng-template #noSubMethods>
+    
+    <div *ngIf="method.properties; then hasProperties else noProperties"></div>
+    
+    <ng-template #hasProperties>
+        <ng-template #content let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="dateOfBirth">Date of birth</label>
+                <div class="input-group">
+                  <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+          </div>
+        </ng-template>
+
+        <button type="button" 
+                class="btn btn-primary btn-sm" 
+                (click)="open(content)"
+        >
+        {{ method.name }}
+
+        <fa name="window-maximize"></fa>
+        </button>
+
+    </ng-template>
+    
+    <ng-template #noProperties>
+      <button type="button" 
+                class="btn btn-primary btn-sm" 
+      >
+        {{ method.name }}
+      </button>
+      
+      
+
+    </ng-template>
+
+  </ng-template>
+  
 </div>
 
 <!-- drop down info here

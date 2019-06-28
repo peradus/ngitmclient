@@ -1,22 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { IITMObjectMethod } from '../itmobject';
-import { DataService } from '../data.service';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-itmobject-method',
-  templateUrl: './itmobject-method.component.html',
-  styleUrls: ['./itmobject-method.component.scss']
+  selector: 'app-modal-dialog',
+  templateUrl: './modal-dialog.component.html',
+  styleUrls: ['./modal-dialog.component.scss']
 })
-
-export class ItmobjectMethodComponent implements OnInit {
-  @Input() instance: string;
-  @Input() method: IITMObjectMethod;
+export class ModalDialogComponent {
   closeResult: string;
-  constructor(private dataservice: DataService, private modalService: NgbModal) {}
 
-  ngOnInit() {
-  }
+  constructor(private modalService: NgbModal) {}
 
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
