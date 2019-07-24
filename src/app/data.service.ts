@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IITMObject,
-         IITMObjectProperty,
          IITMObjectMethod,
+         IITMObjectMethods,
+         IITMObjectProperty,
+         IITMObjectProperties,
          IITMObjectDataTable } from './itmobject';
 
 @Injectable({
@@ -90,7 +92,8 @@ export class DataService {
                 {
                   'name' : 'testproperty',
                   'description' : 'this is a test property',
-                  'value' : '123'
+                  'value' : '123',
+                  'datatype' : 'text'
                 },
                 {
                   'name' : 'testproperty2',
@@ -143,7 +146,7 @@ export class DataService {
   }
 
   topInstance(instance: string): string {
-    let i = instance.indexOf('/');
+    const i = instance.indexOf('/');
     if (i === -1) { // no separator, return full string
       return instance;
     } else { // return text till separator
@@ -152,17 +155,17 @@ export class DataService {
   }
 
   takeTopInstance(instance: string): string {
-    let i = instance.indexOf('/');
+    const i = instance.indexOf('/');
     if (i === -1) { // no separator, return full string
       return '' ;
     } else { // remove text till separator
-      return instance.substr(i+1);
+      return instance.substr(i + 1);
     }
   }
 
   getItmObject(instance: string): IITMObject | undefined {
     console.log('DataService: getItmObject() called, instance =[' + instance + ']');
-    if (this.itmobjectData[instance]) { return this.itmobjectData[instance]}
+    if (this.itmobjectData[instance]) { return this.itmobjectData[instance]; }
     return { name: 'undefined'};
   }
 
@@ -171,7 +174,7 @@ export class DataService {
     return (itmobject.properties[property]);
   }
 
-  getItmObjectProperties(instance: string): IITMObjectProperty[] | undefined {
+  getItmObjectProperties(instance: string): IITMObjectProperties | undefined {
     const itmobject: IITMObject = this.getItmObject(instance);
     return itmobject.properties;
   }

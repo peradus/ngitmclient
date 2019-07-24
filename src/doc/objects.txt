@@ -1,0 +1,20 @@
+properties[
+    property{},
+    property{},
+    property{},
+    property{}
+]
+
+methods[
+    method{
+        name
+        methods:[
+            ]
+    }
+        ]
+    },
+    method{},
+    method{},
+    method{}
+]
+

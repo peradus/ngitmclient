@@ -10,12 +10,12 @@ import { DataService } from '../data.service';
 })
 export class ItmobjectPropertiesComponent implements OnInit {
   @Input() instance: string;
-  properties: IITMObjectProperty[];
+  @Input() properties: IITMObjectProperty[];
   form: FormGroup = new FormGroup({});
 
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    this.properties = this.dataservice.getItmObjectProperties(this.instance);
+    // this.properties = this.dataservice.getItmObjectProperties(this.instance);
   }
 }

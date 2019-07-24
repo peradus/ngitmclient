@@ -1,0 +1,20 @@
+// type MyGroupType = {
+//  [key:string]: MyType;
+// }
+//
+// https://stackoverflow.com/questions/35435042/how-can-i-define-an-array-of-objects
+// 15
+//
+// Some tslint rules are disabling use of [], example message:
+// Array type using 'T[]' is forbidden for non-simple types. Use 'Array<T>' instead.
+//
+// Then you would write it like:
+//
+// var userTestStatus: Array<{ id: number, name: string }> = Array(
+// { "id": 0, "name": "Available" },
+//    { "id": 1, "name": "Ready" },
+//    { "id": 2, "name": "Started" }
+// );
+
+export interface IITMObjectProperties extends Array<IITMObjectProperty> { }
+// export type IITMObjectProperties = Array<IITMObjectProperty>;

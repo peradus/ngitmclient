@@ -27,29 +27,22 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          
           <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="dateOfBirth">Date of birth</label>
-                <div class="input-group">
-                  <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-                  </div>
-                </div>
-              </div>
-            </form>
+            <app-itmobject-properties [instance]='instance' [properties]='method.properties'> </app-itmobject-properties>
           </div>
+          
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
           </div>
+        
         </ng-template>
 
         <button type="button" 
                 class="btn btn-primary btn-sm" 
                 (click)="open(content)"
         >
-        {{ method.name }}
+          {{ method.name }}
 
         <fa name="window-maximize"></fa>
         </button>
@@ -57,13 +50,12 @@
     </ng-template>
     
     <ng-template #noProperties>
+
       <button type="button" 
                 class="btn btn-primary btn-sm" 
       >
         {{ method.name }}
       </button>
-      
-      
 
     </ng-template>
 
@@ -87,4 +79,17 @@ https://ng-bootstrap.github.io/#/components/dropdown/examples
     </div>
   </div>
 </div>
+
+date picker
+<form>
+              <div class="form-group">
+                <label for="dateOfBirth">Date of birth</label>
+                <div class="input-group">
+                  <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </form>
 -->
