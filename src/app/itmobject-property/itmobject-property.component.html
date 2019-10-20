@@ -8,12 +8,12 @@
 
         <div *ngSwitchCase="text">
         
-            <label for="{{ property.displayName }}">{{ property.displayName }}</label>
+            <label for="{{ property.displayName }}">{{ property.name }}</label>
             <input
                 [formControlName]="name"
                 type="text"
                 class="form-control"
-                id="{{ property.displayName }}"
+                id="{{ property.name }}"
                 [value]="value"
             >
             <div *ngIf="form.get(name).touched && form.get(name).invalid" class="class alert alert-danger">

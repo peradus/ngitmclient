@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "itmserver": "nodemon server.js"
   },
   "private": true,
   "dependencies": {
@@ -23,9 +24,12 @@
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.3.1",
     "core-js": "^3.1.4",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "glyphicons": "^0.2.0",
     "jquery": "^3.4.1",
+    "mongoose": "^5.7.5",
+    "nodemon": "^1.19.4",
     "npm": "^6.10.2",
     "popper.js": "^1.15.0",
     "rxjs": "~6.5.2",

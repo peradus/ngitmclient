@@ -1,9 +1,3 @@
 <form [formGroup]="form">
   <app-itmobject-property *ngFor="let p of properties" [instance]="instance" [property]="p" [form]="form"></app-itmobject-property>
-  
-  <div>
-    <button type="submit" [disabled]="form.invalid">
-      Save
-    </button>
-  </div>
 </form>
