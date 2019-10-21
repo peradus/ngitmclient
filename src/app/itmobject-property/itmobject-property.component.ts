@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IITMObjectProperty } from '../itmobject';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
-import { DataService } from '../data.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-itmobject-property',

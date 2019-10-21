@@ -7,7 +7,7 @@ var ItmObjectSchema = new Schema({
         name: {
         type: String
     },
-    displayName: {
+    displayname: {
         type: String
     },
     description: {

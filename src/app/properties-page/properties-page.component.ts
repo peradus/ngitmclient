@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IITMObject } from '../itmobject';
-import { DataService } from '../data.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-properties-page',

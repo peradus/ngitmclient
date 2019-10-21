@@ -9,7 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ConfigurationService } from './configuration.service';
+import { ConfigurationService } from '../services/configuration.service';
 import { ItmobjectComponent } from './itmobject/itmobject.component';
 import { ItmobjectInstanceComponent } from './itmobject-instance/itmobject-instance.component';
 import { ItmobjectInstancesComponent } from './itmobject-instances/itmobject-instances.component';
@@ -17,7 +17,7 @@ import { ItmobjectMethodsComponent } from './itmobject-methods/itmobject-methods
 import { ItmobjectMethodComponent } from './itmobject-method/itmobject-method.component';
 import { TruncatePipe } from './truncate.pipe';
 import { InstancesPageComponent } from './instances-page/instances-page.component';
-import { LogService } from './log.service';
+import { LogService } from '../services/log.service';
 import { PropertiesPageComponent } from './properties-page/properties-page.component';
 import { ItmobjectPropertyComponent } from './itmobject-property/itmobject-property.component';
 import { ItmobjectPropertiesComponent } from './itmobject-properties/itmobject-properties.component';

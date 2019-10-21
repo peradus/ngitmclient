@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IITMObjectMethod } from '../itmobject';
-import { DataService } from '../data.service';
+import { DataService } from '../../services/data.service';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({

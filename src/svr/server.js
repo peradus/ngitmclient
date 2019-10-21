@@ -1,3 +1,18 @@
+/* ITMSERVER
+
+  This works now, basic
+  Get / Put / Delete ITMObject by id
+  (GET)http://localhost:3000/itmobjects/5dacbe72243b411068a4a8fa
+  (PUT))http://localhost:3000/itmobjects/5dacbe72243b411068a4a8fa
+  (DELETE))http://localhost:3000/itmobjects/5dacbe72243b411068a4a8fa
+
+  Get all ITMObjects
+  (GET)http://localhost:3000/itmobjects
+  
+  Add ITMObject
+  (POST)http://localhost:3000/itmobjects
+*/
+
 var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,

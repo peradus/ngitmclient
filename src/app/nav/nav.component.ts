@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigurationService, ConfigurationData } from '../configuration.service';
+import { ConfigurationService, ConfigurationData } from '../../services/configuration.service';
 
 @Component({
   selector: 'app-nav',
