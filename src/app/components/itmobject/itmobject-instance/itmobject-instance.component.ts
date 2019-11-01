@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IITMObject } from '../../../type-definition/itmobject';
 import { TruncatePipe } from '../../../truncate.pipe';
-import { DataService } from '../../../data/services/data.service';
+import { ItmClientService } from '../../../data/services/itmclient.service';
 
 @Component({
   selector: 'app-itmobject-instance',
@@ -12,12 +12,16 @@ export class ItmobjectInstanceComponent implements OnInit {
   @Input() instance: string;
   itmobject: IITMObject;
   shownDescription: string;
-  constructor(private dataservice: DataService, private truncatePipe: TruncatePipe) { }
+  constructor(private itmclientservice: ItmClientService, private truncatePipe: TruncatePipe) { }
 
   ngOnInit() {
-    this.itmobject = this.dataservice.getItmObject(this.instance);
-    // use truncate pipe directly from code, is defined as provider in app.module.ts
-    this.shownDescription = this.truncatePipe.transform(this.itmobject.description);
+    this.itmobject = {
+      name : this.itmclientservice.getInstanceName(this.instance),
+      className : this.itmclientservice.getInstanceClassName(this.instance),
+      shortDescription : this.itmclientservice.getInstanceShortDescription(this.instance),
+      description : this.itmclientservice.getInstanceDescription(this.instance),
+      status : this.itmclientservice.getInstanceDescription(this.instance)
+    };
   }
 
   expandShownDescription() {

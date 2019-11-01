@@ -5,7 +5,7 @@ import { IITMObject,
          IITMObjectMethods,
          IITMObjectProperty,
          IITMObjectProperties,
-         IITMObjectDataTable } from '../../type-definition/itmobject';
+         IITMObjectDataTable } from '../../../type-definition/itmobject';
 
 @Injectable({
   providedIn: 'root'

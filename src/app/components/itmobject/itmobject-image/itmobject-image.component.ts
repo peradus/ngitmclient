@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IITMObject } from '../../../type-definition/itmobject';
-import { DataService } from '../../../data/services/data.service';
+import { ItmClientService } from '../../../data/services/itmclient.service';
 
 @Component({
   selector: 'app-itmobject-image',
@@ -11,12 +11,12 @@ export class ItmobjectImageComponent implements OnInit {
   @Input() width: string;
   @Input() height: string;
   @Input() instance: string;
-  itmobject: IITMObject;
+  className: string;
 
-  constructor(private dataservice: DataService) { }
+  constructor(private itmclientservice: ItmClientService) { }
 
   ngOnInit() {
-    this.itmobject = this.dataservice.getItmObject(this.instance);
+    this.className = this.itmclientservice.getInstanceClassName(this.instance);
     console.log('width=');
     console.log(this.width);
     console.log('heighth=');

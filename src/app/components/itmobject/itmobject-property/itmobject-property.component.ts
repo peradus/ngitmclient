@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IITMObjectProperty } from '../../../type-definition/itmobject';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
-import { DataService } from '../../../data/services/data.service';
+
+import { ItmClientService } from '../../../data/services/itmclient.service';
 
 @Component({
   selector: 'app-itmobject-property',
@@ -21,7 +22,7 @@ export class ItmobjectPropertyComponent implements OnInit {
       return this.property.name;
     }
 
-  constructor(private dataservice: DataService) { }
+  constructor(private itmclientservice: ItmClientService) { }
 
   ngOnInit() {
     // add form control

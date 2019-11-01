@@ -30,6 +30,7 @@ export interface IITMObject {
   className?: string;
   shortDescription?: string;
   description?: string;
+  status?: string;
   methods?: IITMObjectMethods;
   properties?: IITMObjectProperties;
   instances?: IITMObjectInstances;

@@ -26,6 +26,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ItmobjectImageComponent } from './components/itmobject/itmobject-image/itmobject-image.component';
 import { PropertiesDialogComponent } from './components/itmobject/properties-dialog/properties-dialog.component';
 import { ModalDialogComponent } from './components/test/modal-dialog/modal-dialog.component';
+import { ItmClientService } from './data/services/itmclient.service';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ModalDialogComponent } from './components/test/modal-dialog/modal-dialo
     AngularFontAwesomeModule
   ],
   providers: [
+    ItmClientService,
     ConfigurationService,
     LogService,
     TruncatePipe

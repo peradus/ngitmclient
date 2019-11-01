@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IITMObject } from '../../../app/type-definition/itmobject';
-import { DataService } from '../../data/services/data.service';
+import { ItmClientService } from '../../data/services/itmclient.service';
 
 @Component({
   selector: 'app-properties-page',
@@ -9,7 +8,7 @@ import { DataService } from '../../data/services/data.service';
 })
 
 export class PropertiesPageComponent implements OnInit {
-  constructor(private dataservice: DataService) { }
+  constructor(private itmclientservice: ItmClientService) { }
 
   ngOnInit() {
   }

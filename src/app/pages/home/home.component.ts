@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data/services/data.service';
+import { ItmClientService } from '../../data/services/itmclient.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +7,7 @@ import { DataService } from '../../data/services/data.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private dataservice: DataService) { }
+  constructor(private itmclientservice: ItmClientService) { }
     ngOnInit() {
   }
 

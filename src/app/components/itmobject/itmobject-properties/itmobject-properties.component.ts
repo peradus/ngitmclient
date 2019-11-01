@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObject, IITMObjectProperty } from '../../../type-definition/itmobject';
+import { IITMObjectProperties } from '../../../type-definition/itmobject';
 
 import { FormGroup, FormControl } from '@angular/forms';
-import { DataService } from '../../../data/services/data.service';
+import { ItmClientService } from '../../../data/services/itmclient.service';
 
 @Component({
   selector: 'app-itmobject-properties',
@@ -11,12 +11,12 @@ import { DataService } from '../../../data/services/data.service';
 })
 export class ItmobjectPropertiesComponent implements OnInit {
   @Input() instance: string;
-  @Input() properties: IITMObjectProperty[];
+  properties: IITMObjectProperties;
   form: FormGroup = new FormGroup({});
 
-  constructor(private dataservice: DataService) { }
+  constructor(private itmclientservice: ItmClientService) { }
 
   ngOnInit() {
-    // this.properties = this.dataservice.getItmObjectProperties(this.instance);
+    this.properties = this.itmclientservice.getItmObjectProperties(this.instance);
   }
 }

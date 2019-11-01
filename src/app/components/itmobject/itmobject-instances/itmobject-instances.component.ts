@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObject } from '../../../type-definition/itmobject';
-import { DataService } from '../../../data/services/data.service';
+import { IITMObjectInstances } from '../../../type-definition/itmobject';
+import { ItmClientService } from '../../../data/services/itmclient.service';
 
 @Component({
   selector: 'app-itmobject-instances',
@@ -9,15 +9,15 @@ import { DataService } from '../../../data/services/data.service';
 })
 export class ItmobjectInstancesComponent implements OnInit {
   @Input() instance: string;
-  instances: IITMObject[];
+  instances: IITMObjectInstances;
 
   get baseInstance(): string {
     if (this.instance !== '') { return this.instance + '/'; }
     return '';
   }
-  constructor(private dataservice: DataService) { }
+  constructor(private itmclientservice: ItmClientService) { }
 
   ngOnInit() {
-      this.instances = this.dataservice.getItmObjectInstances(this.instance);
+      this.instances = this.itmclientservice.getItmObjectInstances(this.instance);
   }
 }
