@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObjectMethod } from '../../../type-definition/itmobject';
+import { IITMObjectMethod, IITMObject } from '../../../type-definition/itmobject';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ItmClientService } from '../../../data/services/itmclient.service';
@@ -11,7 +11,7 @@ import { ItmClientService } from '../../../data/services/itmclient.service';
 })
 
 export class ItmobjectMethodComponent implements OnInit {
-  @Input() instance: string;
+  @Input() itmobject: IITMObject;
   @Input() method: IITMObjectMethod;
   closeResult: string;
   constructor(private itmclientservice: ItmClientService, private modalService: NgbModal) {}

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObjectProperty } from '../../../type-definition/itmobject';
+import { IITMObjectProperty, IITMObject } from '../../../type-definition/itmobject';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
 import { ItmClientService } from '../../../data/services/itmclient.service';
@@ -11,7 +11,7 @@ import { ItmClientService } from '../../../data/services/itmclient.service';
 })
 export class ItmobjectPropertyComponent implements OnInit {
   @Input() form: FormGroup;
-  @Input() instance: string ;
+  @Input() itmobject: IITMObject ;
   @Input() property: IITMObjectProperty;
    control: FormControl = new FormControl(
     '',

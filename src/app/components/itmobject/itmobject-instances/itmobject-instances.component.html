@@ -1,6 +1,3 @@
 <h4>Instances:</h4>
 
-  <app-itmobject-instance *ngFor="let i of instances" [instance]="baseInstance + i.name"> </app-itmobject-instance>
- 
-
-
+  <app-itmobject-instance *ngFor="let obj of instances" [itmobject]="obj"> </app-itmobject-instance>

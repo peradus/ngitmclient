@@ -8,20 +8,10 @@ import { ItmClientService } from '../../../data/services/itmclient.service';
   templateUrl: './itmobject-instance.component.html',
   styleUrls: ['./itmobject-instance.component.scss']
 })
-export class ItmobjectInstanceComponent implements OnInit {
-  @Input() instance: string;
-  itmobject: IITMObject;
+export class ItmobjectInstanceComponent {
+  @Input() itmobject: IITMObject;
   shownDescription: string;
-  constructor(private itmclientservice: ItmClientService, private truncatePipe: TruncatePipe) { }
-
-  ngOnInit() {
-    this.itmobject = {
-      name : this.itmclientservice.getInstanceName(this.instance),
-      className : this.itmclientservice.getInstanceClassName(this.instance),
-      shortDescription : this.itmclientservice.getInstanceShortDescription(this.instance),
-      description : this.itmclientservice.getInstanceDescription(this.instance),
-      status : this.itmclientservice.getInstanceDescription(this.instance)
-    };
+  constructor(private itmclientservice: ItmClientService, private truncatePipe: TruncatePipe) { 
   }
 
   expandShownDescription() {

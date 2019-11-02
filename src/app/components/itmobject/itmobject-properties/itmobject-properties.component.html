@@ -1,3 +1,6 @@
-<form [formGroup]="form">
-  <app-itmobject-property *ngFor="let p of properties" [instance]="instance" [property]="p" [form]="form"></app-itmobject-property>
-</form>
+<div *ngIf="itmobject?.properties">
+    <form [formGroup]="form">
+      <app-itmobject-property *ngFor="let p of itmobject.properties" [itmobject]="itmobject" [property]="p" [form]="form"></app-itmobject-property>
+    </form>
+</div>
+

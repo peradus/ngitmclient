@@ -28,7 +28,7 @@ export interface IITMObjectProperties extends Array<IITMObjectProperty> { }
 export interface IITMObject {
   name: string;
   className?: string;
-  shortDescription?: string;
+  displayName?: string;
   description?: string;
   status?: string;
   methods?: IITMObjectMethods;
@@ -40,3 +40,6 @@ export interface IITMObjectDataTable {
   [instance: string]: IITMObject;
 }
 
+export class ItmObject implements IITMObject {
+  name: string;
+}

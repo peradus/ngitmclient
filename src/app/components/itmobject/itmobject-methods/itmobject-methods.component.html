@@ -1,6 +1,6 @@
-<div class="btn-group" role="group">
-  <app-itmobject-method *ngFor="let method of methods" 
-    [instance]="instance"
+<div *ngIf="itmobject?.methods" class="btn-group" role="group">
+  <app-itmobject-method *ngFor="let method of itmobject.methods" 
+    [itmobject]="itmobject"
     [method]="method">
   </app-itmobject-method>
 </div>

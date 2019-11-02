@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObjectInstances } from '../../../type-definition/itmobject';
+import { IITMObject } from '../../../type-definition/itmobject';
 import { ItmClientService } from '../../../data/services/itmclient.service';
 
 @Component({
@@ -7,17 +7,9 @@ import { ItmClientService } from '../../../data/services/itmclient.service';
   templateUrl: './itmobject-instances.component.html',
   styleUrls: ['./itmobject-instances.component.scss']
 })
-export class ItmobjectInstancesComponent implements OnInit {
-  @Input() instance: string;
-  instances: IITMObjectInstances;
+export class ItmobjectInstancesComponent {
+  @Input() itmobject: IITMObject;
 
-  get baseInstance(): string {
-    if (this.instance !== '') { return this.instance + '/'; }
-    return '';
-  }
   constructor(private itmclientservice: ItmClientService) { }
 
-  ngOnInit() {
-      this.instances = this.itmclientservice.getItmObjectInstances(this.instance);
-  }
 }

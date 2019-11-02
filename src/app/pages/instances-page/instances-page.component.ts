@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IITMObject } from '../../../app/type-definition/itmobject';
+import { ItmClientService } from '../../data/services/itmclient.service';
+
 
 @Component({
   selector: 'app-instances-page',
@@ -6,9 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./instances-page.component.scss']
 })
 export class InstancesPageComponent implements OnInit {
-  constructor() { }
+  itmObject$: IITMObject;
+  selectedInstance = '';
+  constructor(private itmclientservice: ItmClientService) { }
 
   ngOnInit() {
-  }
+    return this.itmclientservice.getItmObject(this.selectedInstance)
+      .subscribe(data => { this.itmObject$ = data; console.dir(data)});
+}
 
 }

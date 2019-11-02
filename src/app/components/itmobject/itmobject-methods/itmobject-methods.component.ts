@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObjectMethods } from '../../../type-definition/itmobject';
+import { IITMObject } from '../../../type-definition/itmobject';
 import { ItmClientService } from '../../../data/services/itmclient.service';
 
 @Component({
@@ -7,14 +7,9 @@ import { ItmClientService } from '../../../data/services/itmclient.service';
   templateUrl: './itmobject-methods.component.html',
   styleUrls: ['./itmobject-methods.component.scss']
 })
-export class ItmobjectMethodsComponent implements OnInit {
-  @Input() instance: string;
-  methods: IITMObjectMethods;
+export class ItmobjectMethodsComponent {
+  @Input() itmobject: IITMObject;
 
   constructor(private itmclientservice: ItmClientService) {
-  }
-
-  ngOnInit() {
-    this.methods = this.itmclientservice.getItmObjectMethods(this.instance);
   }
 }

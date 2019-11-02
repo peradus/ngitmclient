@@ -11,7 +11,7 @@
     </button>
 
     <div class="dropdown-menu">
-      <app-itmobject-method *ngFor="let m of method.methods" [instance]="instance" [method]="m"></app-itmobject-method>  
+      <app-itmobject-method *ngFor="let m of method.methods" [itmobject]="itmobject" [method]="m"></app-itmobject-method>  
     </div>
   </ng-template>
   
@@ -29,7 +29,7 @@
           </div>
           
           <div class="modal-body">
-            <app-itmobject-properties [instance]='instance'> </app-itmobject-properties>
+            <app-itmobject-properties [itmobject]='itmobject'> </app-itmobject-properties>
           </div>
           
           <div class="modal-footer">

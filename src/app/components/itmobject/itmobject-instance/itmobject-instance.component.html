@@ -1,7 +1,7 @@
 <div class="card border-primary">
   
   <div class="card-header">
-    <app-itmobject-image [instance]="instance" width="32px" height="32px"></app-itmobject-image>
+    <app-itmobject-image [itmobject]="itmobject" width="32px" height="32px"></app-itmobject-image>
 
     {{ itmobject.name }} ( {{ itmobject.className }}) 
   </div>
@@ -14,7 +14,7 @@
         {{ shownDescription }}
     </p>
 
-    <app-itmobject-methods [instance]="instance"></app-itmobject-methods>
+    <app-itmobject-methods [itmobject]="itmobject"></app-itmobject-methods>
 
   </div>
 </div>

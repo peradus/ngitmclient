@@ -1,18 +1,20 @@
-import { Injectable, OnInit } from '@angular/core';
-import { IITMObject, IITMObjectMethods, IITMObjectInstances, IITMObjectProperties } from '../../../app/type-definition/itmobject';
+import { Injectable } from '@angular/core';
+import { IITMObject, ItmObject } from '../../../app/type-definition/itmobject';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItmClientService {
-  selectedInstance: String = '';
+  url = 'http://127.0.0.1:3000/itmobjects/5daa2a415cc33013cc16eb74';
+
   itmObject: IITMObject;
-  constructor()  {
+  constructor(private http: HttpClient)  {
 
     this.itmObject = {
       name: 'anITMObject',
         className: 'ITMObjectClass',
-        shortDescription: 'a short description',
+        displayName: 'a short description',
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis nec
         nisi ac vestibulum. Phasellus facilisis elit enim, eget convallis dui gravida quis. Pellentesque eu
           eros eget ligula hendrerit consectetur nec vitae sapien. Vivamus aliquam nec lorem in scelerisque.
@@ -59,52 +61,13 @@ export class ItmClientService {
       };
   }
 
-  getInstanceName(instance: string): string {
-    if (instance === '') {
-      return this.itmObject.name;
-    } else { return ''; }
-  }
+  getItmObject(instance: string) {
+    console.log('getItmObject called for instance: ', instance);
+    // if (instance === '') {
+//      return this.itmObject;
+      return this.http.get<IITMObject>(this.url);
 
-  getInstanceClassName(instance: string): string {
-    if (instance === '') {
-      return this.itmObject.className;
-    } else { return ''; }
-  }
-
-  getInstanceDescription(instance: string): string {
-    if (instance === '') {
-      return this.itmObject.description;
-    } else { return ''; }
-  }
-
-  getInstanceShortDescription(instance: string): string {
-    if (instance === '') {
-      return this.itmObject.shortDescription;
-    } else { return ''; }
-  }
-
-  getInstanceStatus(instance: string): string {
-    if (instance === '') {
-      return this.itmObject.status;
-    } else { return ''; }
-  }
-
-  getItmObjectMethods(instance: string): IITMObjectMethods {
-    if (instance === '') {
-      return this.itmObject.methods;
-    } else { return []; }
-  }
-
-  getItmObjectInstances(instance: string): IITMObjectInstances {
-    if (instance === '') {
-      return this.itmObject.instances;
-    } else { return []; }
-  }
-
-  getItmObjectProperties(instance: string): IITMObjectProperties {
-    if (instance === '') {
-      return this.itmObject.properties;
-    } else { return []; }
+    // } else { return undefined; }
   }
 }
 
