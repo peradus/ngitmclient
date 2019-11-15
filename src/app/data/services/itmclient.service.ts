@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IITMObject, ItmObject } from '../../../app/type-definition/itmobject';
+import { IITMObject, ItmObject } from '../../itmobject/typedef/itmobject';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

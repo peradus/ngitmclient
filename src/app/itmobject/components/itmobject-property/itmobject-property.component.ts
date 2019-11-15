@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObjectProperty, IITMObject } from '../../../type-definition/itmobject';
+import { IITMObjectProperty, IITMObject } from '../../typedef/itmobject';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
 import { ItmClientService } from '../../../data/services/itmclient.service';

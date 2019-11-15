@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObject } from '../../../type-definition/itmobject';
+import { IITMObject } from '../../typedef/itmobject';
 import { TruncatePipe } from '../../../truncate.pipe';
 import { ItmClientService } from '../../../data/services/itmclient.service';
 

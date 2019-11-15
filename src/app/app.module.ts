@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgModule } from '@angular/core';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbCheckBox} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,23 +15,19 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfigurationService } from '../app/data/services/configuration.service';
-import { ItmobjectComponent } from './components/itmobject/itmobject/itmobject.component';
-import { ItmobjectInstanceComponent } from './components/itmobject/itmobject-instance/itmobject-instance.component';
-import { ItmobjectInstancesComponent } from './components/itmobject/itmobject-instances/itmobject-instances.component';
-import { ItmobjectMethodsComponent } from './components/itmobject/itmobject-methods/itmobject-methods.component';
-import { ItmobjectMethodComponent } from './components/itmobject/itmobject-method/itmobject-method.component';
 import { TruncatePipe } from './truncate.pipe';
 import { InstancesPageComponent } from './pages/instances-page/instances-page.component';
 import { LogService } from '../app/data/services/log.service';
 import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
-import { ItmobjectPropertyComponent } from './components/itmobject/itmobject-property/itmobject-property.component';
-import { ItmobjectPropertiesComponent } from './components/itmobject/itmobject-properties/itmobject-properties.component';
 import { CommonModule } from '@angular/common';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { ItmobjectImageComponent } from './components/itmobject/itmobject-image/itmobject-image.component';
+
 import { PropertiesDialogComponent } from './components/itmobject/properties-dialog/properties-dialog.component';
 import { ModalDialogComponent } from './components/test/modal-dialog/modal-dialog.component';
 import { ItmClientService } from './data/services/itmclient.service';
+import { MatPseudoCheckboxModule } from '@angular/material/core';
+import { ItmobjectModule } from './itmobject/itmobject.module';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -34,17 +35,9 @@ import { ItmClientService } from './data/services/itmclient.service';
     NavComponent,
     AboutComponent,
     HomeComponent,
-    ItmobjectComponent,
-    ItmobjectInstanceComponent,
-    ItmobjectInstancesComponent,
-    ItmobjectMethodsComponent,
-    ItmobjectMethodComponent,
     TruncatePipe,
     InstancesPageComponent,
     PropertiesPageComponent,
-    ItmobjectPropertyComponent,
-    ItmobjectPropertiesComponent,
-    ItmobjectImageComponent,
     PropertiesDialogComponent,
     ModalDialogComponent
   ],
@@ -53,10 +46,13 @@ import { ItmClientService } from './data/services/itmclient.service';
     NgbModule,
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    ItmobjectModule,
+    MaterialModule
   ],
   providers: [
     ItmClientService,

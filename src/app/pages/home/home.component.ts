@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItmClientService } from '../../data/services/itmclient.service';
-import { IITMObject } from '../../../app/type-definition/itmobject';
+import { IITMObject } from '../../itmobject/typedef/itmobject';
 
 @Component({
   selector: 'app-home',

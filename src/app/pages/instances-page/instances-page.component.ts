@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObject } from '../../../app/type-definition/itmobject';
+import { IITMObject } from '../../itmobject/typedef/itmobject';
 import { ItmClientService } from '../../data/services/itmclient.service';
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObjectMethod, IITMObject } from '../../../type-definition/itmobject';
+import { IITMObjectMethod, IITMObject } from '../../typedef/itmobject';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ItmClientService } from '../../../data/services/itmclient.service';
