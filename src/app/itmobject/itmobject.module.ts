@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ItmobjectImageComponent } from './components/itmobject-image/itmobject-image.component';
 import { ItmobjectInstanceComponent } from './components/itmobject-instance/itmobject-instance.component';
@@ -13,7 +14,9 @@ import { ItmobjectComponent } from './components/itmobject/itmobject.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ItmobjectComponent,
@@ -33,7 +36,10 @@ import { ItmobjectComponent } from './components/itmobject/itmobject.component';
     ItmobjectMethodComponent,
     ItmobjectPropertyComponent,
     ItmobjectPropertiesComponent,
-    ItmobjectImageComponent
+    ItmobjectImageComponent,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
   ]

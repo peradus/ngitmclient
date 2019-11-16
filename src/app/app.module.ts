@@ -13,7 +13,9 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ConfigurationService } from '../app/data/services/configuration.service';
 import { TruncatePipe } from './truncate.pipe';
 import { InstancesPageComponent } from './pages/instances-page/instances-page.component';
