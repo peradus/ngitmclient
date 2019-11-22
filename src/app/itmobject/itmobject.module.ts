@@ -10,11 +10,13 @@ import { ItmobjectMethodsComponent } from './components/itmobject-methods/itmobj
 import { ItmobjectPropertiesComponent } from './components/itmobject-properties/itmobject-properties.component';
 import { ItmobjectPropertyComponent } from './components/itmobject-property/itmobject-property.component';
 import { ItmobjectComponent } from './components/itmobject/itmobject.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    MaterialModule,
     FormsModule,
     ReactiveFormsModule
   ],

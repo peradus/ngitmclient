@@ -1,30 +1,48 @@
+<!-- nested menu items 
+https://stackblitz.com/edit/dynamic-nested-menus
+-->
+<mat-menu #childMenu="matMenu" [overlapTrigger]="false">
+    <span *ngFor="let amethod of method.methods">
+      <!-- Handle branch node menu items -->
+      <span *ngIf="amethod.methods && amethod.methods.length > 0">
+        <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
+          <span>{{amethod.name}}</span>
+        </button>
+        <app-itmobject-method #menu [method]="amethod" [itmobject]="itmobject"></app-itmobject-method>
+      </span>
+      <!-- Handle leaf node menu items -->
+      <span *ngIf="!amethod.methods || amethod.methods.length === 0">
+        <button mat-menu-item >
+          <span>{{amethod.name}}</span>
+        </button>
+      </span>
+    </span>
+  </mat-menu>
+  
+
+<!---
 <div class="btn-group">
   <div *ngIf="method.methods; then showSubMethods else noSubMethods"></div>
     
   <ng-template #showSubMethods>
-    <button type="button" 
-      class="btn btn-primary btn-sm dropdown-toggle" 
-      data-toggle="dropdown"
-    >
+    <button mat-raised-button [matMenuTriggerFor]="appMenu">
       {{ method.name }}
-
     </button>
 
-    <div class="dropdown-menu">
+    <mat-menu #appMenu>
       <app-itmobject-method *ngFor="let m of method.methods" [itmobject]="itmobject" [method]="m"></app-itmobject-method>  
-    </div>
+    </mat-menu>
   </ng-template>
   
   <ng-template #noSubMethods>
-    
     <div *ngIf="method.properties; then hasProperties else noProperties"></div>
     
     <ng-template #hasProperties>
         <ng-template #content let-modal>
           <div class="modal-header">
             <h4 class="modal-title" id="modal-basic-title"> {{ method.name }} </h4>
-            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-              <span aria-hidden="true">&times;</span>
+            <button mat-raised-button (click)="modal.dismiss('Cross click')">
+              <mat-icon>more_vert</mat-icon>
             </button>
           </div>
           
@@ -33,27 +51,26 @@
           </div>
           
           <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" (click)="modal.close('execute')"> {{ method.name }}</button>
+            <button mat-raised-button (click)="modal.close('execute')">
+              {{ method.name }}
+            </button>
           </div>
         
         </ng-template>
 
-        <button type="button" 
-                class="btn btn-primary btn-sm" 
+        <button mat-raised-button
                 (click)="open(content)"
         >
           {{ method.name }}
 
-        <!--fa name="window-maximize"></fa>-->
+        <--fa name="window-maximize"></fa>->
         </button>
 
     </ng-template>
     
     <ng-template #noProperties>
 
-      <button type="button" 
-                class="btn btn-primary btn-sm" 
-      >
+      <button mat-raised-button>
         {{ method.name }}
       </button>
 
@@ -62,7 +79,7 @@
   </ng-template>
   
 </div>
-
+-->
 <!-- drop down info here
 https://ng-bootstrap.github.io/#/components/dropdown/examples
 

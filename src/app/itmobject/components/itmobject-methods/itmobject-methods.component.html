@@ -1,3 +1,26 @@
+<div class="basic-container">
+    <span *ngFor="let method of itmobject.methods">
+      <!-- Handle branch node buttons here -->
+      <span *ngIf="method.methods && method.methods?.length > 0">
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu.childMenu">
+          {{method.name}}
+          
+        </button>
+        <app-itmobject-method #menu [method]="method" [itmobject]="itmobject"></app-itmobject-method>
+      </span>
+      <!-- Leaf node buttons here -->
+      <span *ngIf="method">
+        <span *ngIf="(!method?.methods || method?.methods.length === 0)">
+          <button mat-button color="primary" >
+            {{method.name}}
+          </button>
+        </span>
+      </span>
+    </span>
+  </div>
+
+
+  <!---
 <div *ngIf="itmobject?.methods" class="btn-group" role="group">
   <app-itmobject-method *ngFor="let method of itmobject.methods" 
     [itmobject]="itmobject"
@@ -5,3 +28,4 @@
   </app-itmobject-method>
 </div>
 
+-->

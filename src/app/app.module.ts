@@ -27,7 +27,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PropertiesDialogComponent } from './components/itmobject/properties-dialog/properties-dialog.component';
 import { ModalDialogComponent } from './components/test/modal-dialog/modal-dialog.component';
 import { ItmClientService } from './data/services/itmclient.service';
-import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { ItmobjectModule } from './itmobject/itmobject.module';
 import { MaterialModule } from './material/material.module';
 

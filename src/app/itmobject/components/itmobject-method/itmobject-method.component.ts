@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { IITMObjectMethod, IITMObject } from '../../typedef/itmobject';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -13,6 +13,8 @@ import { ItmClientService } from '../../../data/services/itmclient.service';
 export class ItmobjectMethodComponent implements OnInit {
   @Input() itmobject: IITMObject;
   @Input() method: IITMObjectMethod;
+  @ViewChild('childMenu', {static: true}) public childMenu;
+
   closeResult: string;
   constructor(private itmclientservice: ItmClientService, private modalService: NgbModal) {}
 
