@@ -3,110 +3,22 @@ https://stackblitz.com/edit/dynamic-nested-menus
 -->
 <mat-menu #childMenu="matMenu" [overlapTrigger]="false">
     <span *ngFor="let amethod of method.methods">
-      <!-- Handle branch node menu items -->
+      <!-- Handle sub methods -->
       <span *ngIf="amethod.methods && amethod.methods.length > 0">
         <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
           <span>{{amethod.name}}</span>
         </button>
         <app-itmobject-method #menu [method]="amethod" [itmobject]="itmobject"></app-itmobject-method>
       </span>
-      <!-- Handle leaf node menu items -->
+      <!-- Handle single method -->
       <span *ngIf="!amethod.methods || amethod.methods.length === 0">
         <button mat-menu-item >
+          <!-- Method -->
           <span>{{amethod.name}}</span>
+
+          <!-- Properties Icon  -->
+          <i *ngIf="amethod.properties" class="material-icons"> list </i>
         </button>
       </span>
     </span>
   </mat-menu>
-  
-
-<!---
-<div class="btn-group">
-  <div *ngIf="method.methods; then showSubMethods else noSubMethods"></div>
-    
-  <ng-template #showSubMethods>
-    <button mat-raised-button [matMenuTriggerFor]="appMenu">
-      {{ method.name }}
-    </button>
-
-    <mat-menu #appMenu>
-      <app-itmobject-method *ngFor="let m of method.methods" [itmobject]="itmobject" [method]="m"></app-itmobject-method>  
-    </mat-menu>
-  </ng-template>
-  
-  <ng-template #noSubMethods>
-    <div *ngIf="method.properties; then hasProperties else noProperties"></div>
-    
-    <ng-template #hasProperties>
-        <ng-template #content let-modal>
-          <div class="modal-header">
-            <h4 class="modal-title" id="modal-basic-title"> {{ method.name }} </h4>
-            <button mat-raised-button (click)="modal.dismiss('Cross click')">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-          </div>
-          
-          <div class="modal-body">
-            <app-itmobject-properties [itmobject]='itmobject'> </app-itmobject-properties>
-          </div>
-          
-          <div class="modal-footer">
-            <button mat-raised-button (click)="modal.close('execute')">
-              {{ method.name }}
-            </button>
-          </div>
-        
-        </ng-template>
-
-        <button mat-raised-button
-                (click)="open(content)"
-        >
-          {{ method.name }}
-
-        <--fa name="window-maximize"></fa>->
-        </button>
-
-    </ng-template>
-    
-    <ng-template #noProperties>
-
-      <button mat-raised-button>
-        {{ method.name }}
-      </button>
-
-    </ng-template>
-
-  </ng-template>
-  
-</div>
--->
-<!-- drop down info here
-https://ng-bootstrap.github.io/#/components/dropdown/examples
-
-<div class="btn-group">
-  <button type="button" class="btn btn-primary">Apple</button>
-  <button type="button" class="btn btn-primary">Samsung</button>
-  <div class="btn-group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-       Sony
-    </button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Tablet</a>
-      <a class="dropdown-item" href="#">Smartphone</a>
-    </div>
-  </div>
-</div>
-
-date picker
-<form>
-              <div class="form-group">
-                <label for="dateOfBirth">Date of birth</label>
-                <div class="input-group">
-                  <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-                  </div>
-                </div>
-              </div>
-            </form>
--->

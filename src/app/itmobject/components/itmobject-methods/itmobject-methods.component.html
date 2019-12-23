@@ -3,7 +3,7 @@
       <!-- Handle branch node buttons here -->
       <span *ngIf="method.methods && method.methods?.length > 0">
         <button mat-raised-button color="primary" [matMenuTriggerFor]="menu.childMenu">
-          {{method.name}}
+          {{method.name}} <i *ngIf="method.methods"  class="material-icons"> arrow_right </i>
           
         </button>
         <app-itmobject-method #menu [method]="method" [itmobject]="itmobject"></app-itmobject-method>
@@ -13,19 +13,11 @@
         <span *ngIf="(!method?.methods || method?.methods.length === 0)">
           <button mat-button color="primary" >
             {{method.name}}
+            
+            <!-- Properties Icon  -->
+            <i *ngIf="method.properties" class="material-icons"> list </i>
           </button>
         </span>
       </span>
     </span>
   </div>
-
-
-  <!---
-<div *ngIf="itmobject?.methods" class="btn-group" role="group">
-  <app-itmobject-method *ngFor="let method of itmobject.methods" 
-    [itmobject]="itmobject"
-    [method]="method">
-  </app-itmobject-method>
-</div>
-
--->
