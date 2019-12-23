@@ -1,4 +1,4 @@
-<div class="basic-container">
+<div *ngIf="itmobject.methods" class="basic-container">
     <span *ngFor="let method of itmobject.methods">
       <!-- Handle branch node buttons here -->
       <span *ngIf="method.methods && method.methods?.length > 0">
