@@ -12,12 +12,13 @@ https://stackblitz.com/edit/dynamic-nested-menus
       </span>
       <!-- Handle single method -->
       <span *ngIf="!amethod.methods || amethod.methods.length === 0">
-        <button mat-menu-item >
+        <button mat-menu-item (click)="doNethod(amethod.name, itmobject)">
           <!-- Method -->
           <span>{{amethod.name}}</span>
 
           <!-- Properties Icon  -->
           <i *ngIf="amethod.properties" class="material-icons"> list </i>
+
         </button>
       </span>
     </span>

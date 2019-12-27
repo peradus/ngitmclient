@@ -9,7 +9,11 @@ import { ItmClientService } from '../../../data/services/itmclient.service';
 })
 export class ItmobjectMethodsComponent {
   @Input() itmobject: IITMObject;
-
+  busy = false;
   constructor(private itmclientservice: ItmClientService) {
+  }
+
+  doNethod( name, itmobject) {
+    this.itmclientservice.doItmObjectMethod('abc', name);
   }
 }

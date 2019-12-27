@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ItmClientService {
   url = 'http://127.0.0.1:3000/itmobjects/5daa2a415cc33013cc16eb74';
-
+  busy = true;
   itmObject: IITMObject;
   constructor(private http: HttpClient)  {
   }
@@ -19,6 +19,10 @@ export class ItmClientService {
       return this.http.get<IITMObject>(this.url);
 
     // } else { return undefined; }
+  }
+
+  doItmObjectMethod(instance: string, method: string) {
+    console.log('doItmObjectMethod: instance=[' + instance + ' ] method=[' + method + ']');
   }
 }
 
