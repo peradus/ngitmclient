@@ -26,6 +26,7 @@ export interface IITMObjectProperties extends Array<IITMObjectProperty> { }
 // export type IITMObjectProperties = Array<IITMObjectProperty>;
 
 export interface IITMObject {
+  _fqin?: string; // fully qualified instance name
   name: string;
   className?: string;
   displayName?: string;

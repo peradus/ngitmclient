@@ -13,7 +13,8 @@ export class ItmobjectMethodsComponent {
   constructor(private itmclientservice: ItmClientService) {
   }
 
-  doNethod( name, itmobject) {
+  doMethod( itmobject, amethod) {
+    alert('itmobject-methods.doMethod(): ' + JSON.stringify(amethod));
     this.itmclientservice.doItmObjectMethod('abc', name);
   }
 }

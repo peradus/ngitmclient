@@ -11,7 +11,7 @@
     <!-- Leaf node buttons here -->
     <span *ngIf="method">
       <span *ngIf="(!method?.methods || method?.methods.length === 0)">
-        <button mat-button color="primary" [disabled]="busy" (click)="doNethod(method.name, itmobject)" >
+        <button mat-button color="primary" [disabled]="busy" (click)="doMethod( itmobject, method )" >
           {{method.name}}
           
           <!-- Properties Icon  -->

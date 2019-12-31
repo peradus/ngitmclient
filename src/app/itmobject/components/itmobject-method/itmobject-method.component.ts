@@ -21,7 +21,8 @@ export class ItmobjectMethodComponent implements OnInit {
   ngOnInit() {
   }
 
-  doNethod( name, itmobject) {
+  doMethod( itmobject, amethod) {
+    alert('itmobject-method.doMethod(): ' + JSON.stringify(amethod));
     this.itmclientservice.doItmObjectMethod('abc', name);
   }
 }
