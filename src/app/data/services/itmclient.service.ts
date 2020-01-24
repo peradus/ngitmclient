@@ -11,9 +11,9 @@ export class ItmClientService {
   constructor(private http: HttpClient)  {
   }
 
-  // routing through urls 
+  // routing through urls
   // https://stackoverflow.com/questions/51024982/how-to-create-a-url-string-with-query-parameters-from-an-object-in-angular-5
-  getItmObject(instance: string) {
+   getItmObject(instance: string) {
     const itmObject = this.http.get<IITMObject>(this.url);
     return itmObject;
   }

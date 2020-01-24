@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IITMObject } from '../../typedef/itmobject';
-import { TruncatePipe } from '../../../truncate.pipe';
-import { ItmClientService } from '../../../data/services/itmclient.service';
+import { IITMObject } from '../../../typedef/itmobject';
+import { TruncatePipe } from '../../../../truncate.pipe';
+import { ItmClientService } from '../../../../data/services/itmclient.service';
 
 @Component({
   selector: 'app-itmobject-instance',
@@ -11,7 +11,7 @@ import { ItmClientService } from '../../../data/services/itmclient.service';
 export class ItmobjectInstanceComponent {
   @Input() itmobject: IITMObject;
   shownDescription: string;
-  constructor(private itmclientservice: ItmClientService, private truncatePipe: TruncatePipe) { 
+  constructor(private itmclientservice: ItmClientService, private truncatePipe: TruncatePipe) {
   }
 
   expandShownDescription() {

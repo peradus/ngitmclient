@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { IITMObjectMethod, IITMObject } from '../../typedef/itmobject';
+import { IITMObjectMethod, IITMObject } from '../../../typedef/itmobject';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { ItmClientService } from '../../../data/services/itmclient.service';
+import { ItmClientService } from '../../../../data/services/itmclient.service';
 
 @Component({
   selector: 'app-itmobject-method',
