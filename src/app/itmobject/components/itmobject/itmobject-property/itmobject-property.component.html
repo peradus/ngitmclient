@@ -1,14 +1,15 @@
 <div [formGroup]="form" class="form-group">
 <!--- https://angular.io/api/common/NgSwitch -->
+    <label for="{{ property.displayName }}">{{ property.name }}</label>
+
     <div [ngSwitch]="property.datatype">
         
         <div *ngSwitchDefault> 
-            Unknown PropertyType
+            <app-itmobject-property-string></app-itmobject-property-string>
         </div>
 
         <div *ngSwitchCase="text">
         
-            <label for="{{ property.displayName }}">{{ property.name }}</label>
             <input
                 [formControlName]="name"
                 type="text"

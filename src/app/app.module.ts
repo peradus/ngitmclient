@@ -18,9 +18,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ConfigurationService } from '../app/data/services/configuration.service';
 import { TruncatePipe } from './truncate.pipe';
-import { InstancesPageComponent } from './pages/instances-page/instances-page.component';
+import { InstancesPageComponent } from './pages/instances/instances-page.component';
 import { LogService } from '../app/data/services/log.service';
-import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
+import { PropertiesPageComponent } from './pages/properties/properties-page.component';
 import { CommonModule } from '@angular/common';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
@@ -29,6 +29,9 @@ import { ModalDialogComponent } from './components/test/modal-dialog/modal-dialo
 import { ItmClientService } from './data/services/itmclient.service';
 import { ItmobjectModule } from './itmobject/itmobject.module';
 import { MaterialModule } from './material/material.module';
+// tslint:disable-next-line:import-spacing
+import { ItmobjectPropertyStringComponent } from
+  './itmobject/components/itmobject/itmobject-property/itmobject-property-string/itmobject-property-string.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { MaterialModule } from './material/material.module';
     InstancesPageComponent,
     PropertiesPageComponent,
     PropertiesDialogComponent,
-    ModalDialogComponent
+    ModalDialogComponent,
+    ItmobjectPropertyStringComponent
   ],
   imports: [
     CommonModule,

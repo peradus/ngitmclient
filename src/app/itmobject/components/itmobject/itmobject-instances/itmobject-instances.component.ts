@@ -7,7 +7,6 @@ import { ItmClientService } from '../../../../data/services/itmclient.service';
   templateUrl: './itmobject-instances.component.html',
   styleUrls: ['./itmobject-instances.component.scss']
 })
-
 export class ItmobjectInstancesComponent {
   @Input() itmobject: IITMObject;
 

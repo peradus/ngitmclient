@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ItmobjectImageComponent } from './components/itmobject/image/itmobject-image.component';
-import { ItmobjectInstanceComponent } from './components/itmobject/instance/itmobject-instance.component';
-import { ItmobjectInstancesComponent } from './components/itmobject/instances/itmobject-instances.component';
-import { ItmobjectMethodComponent } from './components/itmobject/method/itmobject-method.component';
-import { ItmobjectMethodsComponent } from './components/itmobject/methods/itmobject-methods.component';
-import { ItmobjectPropertiesComponent } from './components/itmobject/properties/itmobject-properties.component';
-import { ItmobjectPropertyComponent } from './components/itmobject/property/itmobject-property.component';
+import { ItmobjectImageComponent } from './components/itmobject/itmobject-image/itmobject-image.component';
+import { ItmobjectInstanceComponent } from './components/itmobject/itmobject-instance/itmobject-instance.component';
+import { ItmobjectInstancesComponent } from './components/itmobject/itmobject-instances/itmobject-instances.component';
+import { ItmobjectMethodComponent } from './components/itmobject/itmobject-method/itmobject-method.component';
+import { ItmobjectMethodsComponent } from './components/itmobject/itmobject-methods/itmobject-methods.component';
+import { ItmobjectPropertiesComponent } from './components/itmobject/itmobject-properties/itmobject-properties.component';
+import { ItmobjectPropertyComponent } from './components/itmobject/itmobject-property/itmobject-property.component';
 import { ItmobjectComponent } from './components/itmobject/itmobject.component';
 import { MaterialModule } from '../material/material.module';
 
