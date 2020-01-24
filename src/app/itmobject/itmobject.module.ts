@@ -11,6 +11,10 @@ import { ItmobjectPropertiesComponent } from './components/itmobject/itmobject-p
 import { ItmobjectPropertyComponent } from './components/itmobject/itmobject-property/itmobject-property.component';
 import { ItmobjectComponent } from './components/itmobject/itmobject.component';
 import { MaterialModule } from '../material/material.module';
+// tslint:disable-next-line:max-line-length
+import { ItmobjectPropertyStringComponent } from './components/itmobject/itmobject-property/itmobject-property-string/itmobject-property-string.component';
+// tslint:disable-next-line:max-line-length
+import { ItmobjectPropertyNumericComponent } from './components/itmobject/itmobject-property/itmobject-property-numeric/itmobject-property-numeric.component';
 
 
 @NgModule({
@@ -27,6 +31,8 @@ import { MaterialModule } from '../material/material.module';
     ItmobjectMethodsComponent,
     ItmobjectMethodComponent,
     ItmobjectPropertyComponent,
+    ItmobjectPropertyStringComponent,
+    ItmobjectPropertyNumericComponent,
     ItmobjectPropertiesComponent,
     ItmobjectImageComponent
   ],
@@ -37,6 +43,8 @@ import { MaterialModule } from '../material/material.module';
     ItmobjectMethodsComponent,
     ItmobjectMethodComponent,
     ItmobjectPropertyComponent,
+    ItmobjectPropertyStringComponent,
+    ItmobjectPropertyNumericComponent,
     ItmobjectPropertiesComponent,
     ItmobjectImageComponent,
     CommonModule,

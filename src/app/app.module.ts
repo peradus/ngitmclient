@@ -29,9 +29,6 @@ import { ModalDialogComponent } from './components/test/modal-dialog/modal-dialo
 import { ItmClientService } from './data/services/itmclient.service';
 import { ItmobjectModule } from './itmobject/itmobject.module';
 import { MaterialModule } from './material/material.module';
-// tslint:disable-next-line:import-spacing
-import { ItmobjectPropertyStringComponent } from
-  './itmobject/components/itmobject/itmobject-property/itmobject-property-string/itmobject-property-string.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +41,6 @@ import { ItmobjectPropertyStringComponent } from
     PropertiesPageComponent,
     PropertiesDialogComponent,
     ModalDialogComponent,
-    ItmobjectPropertyStringComponent
   ],
   imports: [
     CommonModule,
